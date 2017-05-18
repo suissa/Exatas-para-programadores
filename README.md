@@ -26,6 +26,8 @@ Criar uma plataforma de criaçao de ferramentas sócio-educacionais onde os prof
 
 ### Matem√tica
 
+
+
 - sistema visual de ensino de operações
 - sistema de execuçao de algoritmo em linguagem natural
 - sistema de conversao do algoritmo em linguagens de programaçao
@@ -116,9 +118,93 @@ Com isso conseguimos separar o menor múltiplo comum porque achamos um número q
 
 assim como 27 e 9 acha o 9 como menor, 27 e 3 achara o 3. 
 
+```
+
 > Tudo se trata de proporçao!
 
+Além do que precisamos ensinar do micro para o macro, demonstrar que qualquer calculo matematico pode ser reduzido em `+` e `-`, onde o que importa é vc saber o que fazer com eles.
+
+Conseguir inferir que a aceleraçao é uma diferença na velocidade de um corpo apenas analisando sua definicao:
+
+>  substantivo feminino - Aumento da velocidade, pressa. [Física] Aumento de velocidade, por unidade de tempo, nos corpos em movimento.
+
+Logo para que ela exista precisa-se da velocidade e a definicao de velocidade é:
+
+> substantivo feminino - Qualidade de veloz. Movimento rapido; rapidez. Distancia percorrida durante uma unidade de tempo: a velocidade do som.
+
+Entendendo essa parte: "Distancia percorrida durante uma unidade de tempo".
+
+Podemos inferir que quando nos falam "100km/h" estao dizendo que o corpo percorreu uma distancia que poderia ser 100 kilometros em 1 hora. 
+
+> Se ele percorreu uma distancia logo ele partiu de um ponto X para um Y, correto?
+
+Essa é a diferença da distancia ou, como chamamos, delta da distancia. 
+
+O mesmo ocorre com a velocidade, o corpo inciou em um tempoInicial e terminou em um tempoFinal.
+
+Entao para a velocidade nós temos:
+
 ```
+
+distanciaFinal - distanciaInicial 
+_________________________________
+tempoInicial - tempoInicial 
+
+
+delta( d ) // km
+__________
+delta( t ) // h
+
+
+// Por isso km/h
+
+```
+
+Lembrando o que é aceleracao:
+
+>  substantivo feminino - Aumento da velocidade, pressa. [Física] Aumento de velocidade, por unidade de tempo, nos corpos em movimento.
+
+Ou seja:
+
+```
+
+aceleracao = velocidade / tempo
+
+aceleracao = delta( d ) / delta( t ) / tempo
+
+aceleracao = delta( d ) / delta( t ) / delta( t )
+
+aceleracao = delta( d )
+            ___________
+            delta( t )
+            ___________
+            delta( t )
+
+
+aceleracao = delta( d )
+            ___________
+            delta( t )
+            ___________
+                 1
+            ___________
+            delta( t )
+
+aceleracao = delta( d )       1
+            ___________ x ___________
+            delta( t )     delta( t )
+            
+aceleracao = delta( d ) 
+            ___________ 
+            delta( t )  x delta( t )
+            
+aceleracao = delta( d ) 
+            ___________ 
+            delta( t )^2
+
+// Por isso a aceleracao é km/m^2
+
+```
+
 
 > Eu, IMHO, nao irei ensinar fórmulas, mas sim os conceitos e como liga-los.
 
