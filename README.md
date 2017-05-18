@@ -276,7 +276,8 @@ Ou seja:
 
 ```
 
-aceleracao = velocidade / tempo
+aceleracao = velocidade() / tempo()
+
 
 aceleracao = delta( d ) / delta( t ) / tempo
 
@@ -310,5 +311,17 @@ aceleracao = delta( d )
             delta( t )^2
 
 // Por isso a aceleracao é km/m^2
+
+```
+
+```js
+
+const aceleracao = ( velocidade, tempo ) => divida( velocidade, tempo )
+
+aceleracao = ( distanciaInicial, distanciaFinal, tempoInicial, tempoFinal ) => 
+  divida(  
+    divida( delta( distanciaInicial, distanciaFinal ), 
+            delta( tempoInicial, tempoFinal ) ), 
+    delta( tempoInicial, tempoFinal ) )
 
 ```
