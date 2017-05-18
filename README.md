@@ -35,6 +35,14 @@ Criar uma plataforma de criaçao de ferramentas sócio-educacionais onde os prof
   - iniciando pela + e números negativos
 
 
+### Física
+
+### Química
+
+- tabela periódica remodelada
+
+### Biologia
+
 
 ## Metodologia Disruptiva para
 
