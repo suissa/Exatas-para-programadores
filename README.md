@@ -257,13 +257,13 @@ delta( tempoInicial, tempoFinal ) // h
 
 Melhorando:
 
-```
+```js
 
 const delta = ( inicial, final, unidade ) => `${final - inicial}${unidade}`
 
-delta( distanciaInicial, distanciaFinal, 'km' ) 
-__________
-delta( tempoInicial, tempoFinal, 'h' ) 
+// delta( distanciaInicial, distanciaFinal, 'km' ) 
+// __________
+// delta( tempoInicial, tempoFinal, 'h' ) 
 
 
 ```
@@ -276,8 +276,7 @@ Ou seja:
 
 ```
 
-aceleracao = velocidade() / tempo()
-
+aceleracao = velocidade / tempo
 
 aceleracao = delta( d ) / delta( t ) / tempo
 
@@ -304,7 +303,7 @@ aceleracao = delta( d )       1
             
 aceleracao = delta( d ) 
             ___________ 
-            delta( t )  x delta( t )
+            delta( t )  x  delta( t )
             
 aceleracao = delta( d ) 
             ___________ 
@@ -314,14 +313,45 @@ aceleracao = delta( d )
 
 ```
 
+Colocando em JS precisamos pensar que distancia, tempo, velocidade, etc nao sao valores e sim funçaoes que retornam valores processados.
+
 ```js
 
+const divida = ( dividendo, divisor ) => dividendo / divisor
 const aceleracao = ( velocidade, tempo ) => divida( velocidade, tempo )
+const delta = ( inicial, final, unidade ) => `${final - inicial}${unidade}`
 
-aceleracao = ( distanciaInicial, distanciaFinal, tempoInicial, tempoFinal ) => 
+aceleracao = ( distanciaInicial, distanciaFinal, distanciaUnidade
+              tempoInicial, tempoFinal, tempoUnidade ) => 
   divida(  
-    divida( delta( distanciaInicial, distanciaFinal ), 
-            delta( tempoInicial, tempoFinal ) ), 
-    delta( tempoInicial, tempoFinal ) )
+    divida( delta( distanciaInicial, distanciaFinal, distanciaUnidade ), 
+            delta( tempoInicial, tempoFinal, tempoUnidade ) ), 
+    delta( tempoInicial, tempoFinal, tempoUnidade ) )
+
+```
+
+Melhorando:
+
+```js
+
+const divida = ( dividendo, divisor ) => dividendo / divisor
+const aceleracao = ( velocidade, tempo ) => divida( velocidade, tempo )
+const delta = ( inicial, final, unidade ) => `${final - inicial}${unidade}`
+
+const distancia = { inicial, 
+                    final, 
+                    unidade
+                  }
+
+const tempo = { inicial, 
+                final, 
+                unidade
+              }
+
+aceleracao = ( distancia, tempo ) => 
+  divida(  
+    divida( delta( distancia.inicial, distancia.final, distancia.unidade ), 
+            delta( tempo.inicial, tempo.final, tempo.unidade ) ), 
+    delta( tempo.inicial, tempo.final, tempo.unidade ) )
 
 ```
