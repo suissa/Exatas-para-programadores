@@ -313,15 +313,26 @@ aceleracao = delta( d )
 
 ```
 
-Colocando em JS precisamos pensar que distancia, tempo, velocidade, etc nao sao valores e sim funçaoes que retornam valores processados.
+Colocando em JS precisamos pensar que distancia, tempo, velocidade, etc nao sao valores e sim funçoes que retornam valores processados.
 
 ```js
 
 const divida = ( dividendo, divisor ) => dividendo / divisor
-const aceleracao = ( velocidade, tempo ) => divida( velocidade, tempo )
-const delta = ( inicial, final, unidade ) => `${final - inicial}${unidade}`
 
-aceleracao = ( distanciaInicial, distanciaFinal, distanciaUnidade
+const delta = ( inicial, final ) => final - inicial
+
+const velocidade = ( inicial, final ) => delta( inicial, final )
+const distancia = ( inicial, final ) => delta( inicial, final )
+
+const aceleracao = ( velocidade, tempo ) => divida( velocidade, tempo )
+
+```
+
+Logo podemos escrever a aceleracao baseada na velocidade:
+
+```js
+
+const aceleracao = ( distanciaInicial, distanciaFinal, distanciaUnidade
               tempoInicial, tempoFinal, tempoUnidade ) => 
   divida(  
     divida( delta( distanciaInicial, distanciaFinal, distanciaUnidade ), 
@@ -329,29 +340,37 @@ aceleracao = ( distanciaInicial, distanciaFinal, distanciaUnidade
     delta( tempoInicial, tempoFinal, tempoUnidade ) )
 
 ```
-
 Melhorando:
 
 ```js
 
 const divida = ( dividendo, divisor ) => dividendo / divisor
 const aceleracao = ( velocidade, tempo ) => divida( velocidade, tempo )
-const delta = ( inicial, final, unidade ) => `${final - inicial}${unidade}`
+const delta = ( inicial, final, unidade ) => final - inicial
 
-const distancia = { inicial, 
-                    final, 
-                    unidade
-                  }
+const distancia = { 
+  inicial: 0, 
+  final: 100, 
+  unidade: 'km'
+}
 
-const tempo = { inicial, 
-                final, 
-                unidade
-              }
+const tempo = { 
+  inicial: 0, 
+  final: 1, 
+  unidade: 'h'
+}
 
-aceleracao = ( distancia, tempo ) => 
+const aceleracao = ( distancia, tempo ) => 
   divida(  
-    divida( delta( distancia.inicial, distancia.final, distancia.unidade ), 
-            delta( tempo.inicial, tempo.final, tempo.unidade ) ), 
-    delta( tempo.inicial, tempo.final, tempo.unidade ) )
+    divida( delta( distancia.inicial, distancia.final ), 
+            delta( tempo.inicial, tempo.final ) ), 
+    delta( tempo.inicial, tempo.final ) ) + 
+    `${distancia.unidade}/${tempo.unidade}^2`
+
+console.log( 'aceleracao', aceleracao( distancia, tempo ) )
 
 ```
+
+**Sabemos que a unidade de tempo SEMPRE é elevada ao quadrado!**
+
+E com isso conseguimos o mesmo resultado da aceleracao sem precisar ter de antemao o valor da velocidade, tendo em vista que o mesmo pode ser reduzido em outros valores computados.
