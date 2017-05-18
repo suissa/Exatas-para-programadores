@@ -124,15 +124,98 @@ assim como 27 e 9 acha o 9 como menor, 27 e 3 achara o 3.
 
 Além do que precisamos ensinar do micro para o macro, demonstrar que qualquer calculo matematico pode ser reduzido em `+` e `-`, onde o que importa é vc saber o que fazer com eles.
 
+
+
+> Eu, IMHO, nao irei ensinar fórmulas, mas sim os conceitos e como liga-los.
+
+Precisamos entender que é mais importante um aluno resolver **qualquer** calculo criando um algoritmo que ele possa ir testando passo-a-passo e o sistema responder com um feedback onde ele errou, igual os erros em programaçao, e faça o aluno aprender sozinho e correr atras do conhecimento que lhe falta, do que apenas ensinar uma fórmula e como aplica-la corretamente.
+
+> Demora-se muito mais tempo para escrever um algoritmo que faça uma divisao do que fazer algumas delas na mao, porém escrevendo uma vez a soluçao para **todos os casos** você só ira precisar usar essa funçao pois você ja entendeu como funcion.
+
+Fora isso os alunos precisam aprender conceitos como *looping* e tipos antes mesmo de aprender Matematica.
+
+> Se vc perguntar para uma criança qual o resultado de laranja + gato ela nao vai responder: uma laranjada de gato. Porque ela sabe que nao pode.
+
+E esse nao poder juntar coisas diferentes nada mais é do que a tipagem na Programaçao.
+
+Uma criança ja sabe que 1 quadrado nao encaixa em um circulo, entao porque nao usar desse pré-conhecimento da criança e sempre passar ele a frente com aplicações praticas.
+
+Qualquer exercício devera ser baseado nas competências necessarias para fazê-lo, por exemplo um exercício de raiz quadrada:
+
+```
+
+√x = y
+
+```
+
+Antes disso o aluno tera que ter criado o algoritmo da divisao e multiplicacao, pois ele sabera que uma raiz ou potência nada mais é que um *looping* de divisões ou multiplicações e que divisao e multiplicacao nada mais é que um *looping* de subatrações e adições.
+
+Com isso o aluno sempre tera que fazer os algorimos necessarios para chegar até aquele conhecimento, para que entenda que Exatas nao é decorar fórmulas, mas sim entendê-las.
+
+Como essa soluçao que encontrei brincando e é bem simples de implementar:
+
+```
+
+√x = y
+
+x = y^2
+
+x = y * y
+
+x / y = y
+
+y = x / y
+
+```
+
+### Física
+
 Conseguir inferir que a aceleraçao é uma diferença na velocidade de um corpo apenas analisando sua definicao:
 
->  substantivo feminino - Aumento da velocidade, pressa. [Física] Aumento de velocidade, por unidade de tempo, nos corpos em movimento.
+> aceleraçao: substantivo feminino - Aumento da velocidade, pressa. [Física] Aumento de velocidade, por unidade de tempo, nos corpos em movimento.
 
 Logo para que ela exista precisa-se da velocidade e a definicao de velocidade é:
 
-> substantivo feminino - Qualidade de veloz. Movimento rapido; rapidez. Distancia percorrida durante uma unidade de tempo: a velocidade do som.
+> velocidade: substantivo feminino - Qualidade de veloz. Movimento rapido; rapidez. Distancia percorrida durante uma unidade de tempo: a velocidade do som.
 
 Entendendo essa parte: "Distancia percorrida durante uma unidade de tempo".
+
+> distancia: substantivo feminino - Espaço entre dois pontos. 
+
+> unidade: substantivo feminino - número um. Qualidade do que é um ou único.
+
+> tempo: substantivo masculino - Período sem interrup��es no qual os acontecimentos ocorrem;
+
+Quando lemos `unidade de tempo` podemos inferir que é algo único baseado no tempo e para termos algo único com tantos números nós os agrupamos em conjuntos.
+
+Por exemplo:
+
+```
+
+1 hora = 60 minutos
+1 minuto = 60 segundos
+
+```
+
+Tanto hora, minuto e segundo sao **unidades** de tempo mesmo possuindo valores diferentes todas sao relacionadas ao tempo, por isso temos uma forma únida de medi-lo.
+
+E sabendo que a distancia é um espaço entre 2 pontos, podemos inferir que sao a posicaoInicial e posicaoFinal. Logo para existir uma distancia precisa existir uma diferença entre esses dois pontos.
+
+Logo:
+
+
+```
+
+distancia = posicaoFinal - posicaoInicial
+
+distancia = ( posicaoInicial, posicaoFinal ) => posicaoFinal - posicaoInicial
+
+```
+
+Lembrando que a velocidade é a:
+
+> "Distancia percorrida durante uma unidade de tempo"
+
 
 Podemos inferir que quando nos falam "100km/h" estao dizendo que o corpo percorreu uma distancia que poderia ser 100 kilometros em 1 hora. 
 
@@ -202,48 +285,5 @@ aceleracao = delta( d )
             delta( t )^2
 
 // Por isso a aceleracao é km/m^2
-
-```
-
-
-> Eu, IMHO, nao irei ensinar fórmulas, mas sim os conceitos e como liga-los.
-
-Precisamos entender que é mais importante um aluno resolver **qualquer** calculo criando um algoritmo que ele possa ir testando passo-a-passo e o sistema responder com um feedback onde ele errou, igual os erros em programaçao, e faça o aluno aprender sozinho e correr atras do conhecimento que lhe falta, do que apenas ensinar uma fórmula e como aplica-la corretamente.
-
-> Demora-se muito mais tempo para escrever um algoritmo que faça uma divisao do que fazer algumas delas na mao, porém escrevendo uma vez a soluçao para **todos os casos** você só ira precisar usar essa funçao pois você ja entendeu como funcion.
-
-Fora isso os alunos precisam aprender conceitos como *looping* e tipos antes mesmo de aprender Matematica.
-
-> Se vc perguntar para uma criança qual o resultado de laranja + gato ela nao vai responder: uma laranjada de gato. Porque ela sabe que nao pode.
-
-E esse nao poder juntar coisas diferentes nada mais é do que a tipagem na Programaçao.
-
-Uma criança ja sabe que 1 quadrado nao encaixa em um circulo, entao porque nao usar desse pré-conhecimento da criança e sempre passar ele a frente com aplicações praticas.
-
-Qualquer exercício devera ser baseado nas competências necessarias para fazê-lo, por exemplo um exercício de raiz quadrada:
-
-```
-
-√x = y
-
-```
-
-Antes disso o aluno tera que ter criado o algoritmo da divisao e multiplicacao, pois ele sabera que uma raiz ou potência nada mais é que um *looping* de divisões ou multiplicações e que divisao e multiplicacao nada mais é que um *looping* de subatrações e adições.
-
-Com isso o aluno sempre tera que fazer os algorimos necessarios para chegar até aquele conhecimento, para que entenda que Exatas nao é decorar fórmulas, mas sim entendê-las.
-
-Como essa soluçao que encontrei brincando e é bem simples de implementar:
-
-```
-
-√x = y
-
-x = y^2
-
-x = y * y
-
-x / y = y
-
-y = x / y
 
 ```
