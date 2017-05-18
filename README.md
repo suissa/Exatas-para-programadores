@@ -199,9 +199,11 @@ Por exemplo:
 
 Tanto hora, minuto e segundo sao **unidades** de tempo mesmo possuindo valores diferentes todas sao relacionadas ao tempo, por isso temos uma forma únida de medi-lo.
 
-E sabendo que a distancia é um espaço entre 2 pontos, podemos inferir que sao a posicaoInicial e posicaoFinal. Logo para existir uma distancia precisa existir uma diferença entre esses dois pontos.
+E sabendo que a distancia é um espaço entre 2 pontos, podemos inferir que sao a posicaoInicial e posicaoFinal. Pois se nao existe espaço/diferença entre suas posições nao existe uma distancia.
 
-Logo:
+Logo para existir uma distancia precisa existir uma diferença entre esses dois pontos.
+
+Entao podemos escrever assim:
 
 
 ```
@@ -231,15 +233,38 @@ Entao para a velocidade nós temos:
 
 distanciaFinal - distanciaInicial 
 _________________________________
-tempoInicial - tempoInicial 
+tempoFinal - tempoInicial 
 
 
-delta( d ) // km
+```
+
+Porem ja vimos esse calculo de `final - inicial` o qual chamamos de: `delta`.
+
+Por conseguinte podemos escrever isso:
+
+```
+
+const delta = ( inicial, final ) => final - inicial
+
+delta( distanciaInicial, distanciaFinal ) // km
 __________
-delta( t ) // h
+delta( tempoInicial, tempoFinal ) // h
 
 
 // Por isso km/h
+
+```
+
+Melhorando:
+
+```
+
+const delta = ( inicial, final, unidade ) => `${final - inicial}${unidade}`
+
+delta( distanciaInicial, distanciaFinal, 'km' ) 
+__________
+delta( tempoInicial, tempoFinal, 'h' ) 
+
 
 ```
 
