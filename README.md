@@ -345,14 +345,13 @@ Melhorando:
 ```js
 
 const divida = ( dividendo, divisor ) => dividendo / divisor
-const aceleracao = ( velocidade, tempo ) => divida( velocidade, tempo )
 const delta = ( inicial, final, unidade ) => final - inicial
 
 const distancia = { 
   inicial: 0, 
   final: 100, 
   unidade: 'km'
-}
+                }
 
 const tempo = { 
   inicial: 0, 
@@ -360,6 +359,7 @@ const tempo = {
   unidade: 'h'
 }
 
+// const aceleracao = ( velocidade, tempo ) => divida( velocidade, tempo )
 const aceleracao = ( distancia, tempo ) => 
   divida(  
     divida( delta( distancia.inicial, distancia.final ), 
@@ -367,7 +367,7 @@ const aceleracao = ( distancia, tempo ) =>
     delta( tempo.inicial, tempo.final ) ) + 
     `${distancia.unidade}/${tempo.unidade}^2`
 
-console.log( 'aceleracao', aceleracao( distancia, tempo ) )
+console.log('aceleracao', aceleracao( distancia, tempo ))
 
 ```
 
