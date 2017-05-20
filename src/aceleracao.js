@@ -1,15 +1,17 @@
 const divida = ( dividendo, divisor ) => dividendo / divisor
 const delta = ( inicial, final, unidade ) => final - inicial
 
-const distancia = { inicial: 0, 
-                    final: 100, 
-                    unidade: 'km'
-                  }
+const distancia = { 
+  inicial: 0, 
+  final: 100, 
+  unidade: 'km'
+                }
 
-const tempo = { inicial: 0, 
-                final: 1, 
-                unidade: 'h'
-              }
+const tempo = { 
+  inicial: 0, 
+  final: 1, 
+  unidade: 'h'
+}
 
 // const aceleracao = ( velocidade, tempo ) => divida( velocidade, tempo )
 const aceleracao = ( distancia, tempo ) => 
